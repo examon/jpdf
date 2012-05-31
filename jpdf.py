@@ -42,6 +42,7 @@
 
 from pyPdf import PdfFileWriter, PdfFileReader
 from sys import argv
+from getpass import getpass
 
 def main():
 	destination = argv[1]
@@ -54,7 +55,17 @@ def main():
 	except IOError:
 		print "error: file \"%s\" does not exist" % pdf_file
 		return
-	
+
+	# check for any encrypted file
+	for i in range(len(input_files)):
+		if (input_files[i].getIsEncrypted()):
+			print "warrning: file \"%s\" is encrypted" % argv[i+2]
+			pw = getpass("decrypt %s, password: " % argv[i+2])
+			if (input_files[i].decrypt(pw) == 0):
+				print "error: sorry, wrong passowrd"
+				return
+			else: print "%s has been dencrypted, processing..." % argv[i+2]
+
 	# add all pages from input_files[] to output
 	output = PdfFileWriter()
 	for one_pdf in input_files:
@@ -65,6 +76,7 @@ def main():
 	outputStream = file(destination, "wb")
 	output.write(outputStream)
 	outputStream.close()
+	print "done!"
 
 def show_help():
 	print "USAGE: %s final.pdf file1 [file2 file3 ... fileN]" % argv[0]
