@@ -67,8 +67,8 @@ def main():
 	outputStream.close()
 
 def show_help():
-	print "%s final.pdf file1 [file2 file3 ... fileN]" % argv[0]
-	print "or %s [-h] [--help]" % argv[0]	
+	print "USAGE: %s final.pdf file1 [file2 file3 ... fileN]" % argv[0]
+	print "       %s [-h] [--help]" % argv[0]	
 
 if __name__ == "__main__":
 	if ((len(argv) == 2) and (argv[1] == "-h" or argv[1] == "--help")): show_help()
