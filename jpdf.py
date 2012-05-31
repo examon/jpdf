@@ -46,7 +46,7 @@ from sys import argv
 def main():
 	destination = argv[1]
 
-	# take pdf, rdy for join, files from argv and save them into input_files[]
+	# take pdf files (file1 ... fileN) from argv & save them into input_files[]
 	input_files = []
 	try:
 		for pdf_file in argv[2:]:
