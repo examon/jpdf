@@ -81,7 +81,7 @@ def main():
 	print "done!"
 
 def show_help():
-	print "USAGE: jpdf final.pdf file1 [file2 file3 ... fileN]"
+	print "Usage: jpdf final.pdf file1 [file2 file3 ... fileN]"
 	print "       jpdf final.pdf file*"
 	print "       jpdf [-h] [--help]"
 
