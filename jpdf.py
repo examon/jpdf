@@ -34,13 +34,13 @@
 #
 # USAGE:
 #
-#	$ python jpdf.py final.pdf file1 [file2 file3 ... fileN]
+#	jpdf final.pdf file1 [file2 file3 ... fileN]
 # or
-#	$ python jpdf.py final.pdf file*
+#	jpdf final.pdf file*
 #
 # to show help
 #
-#	$ python jpdf.py [-h] [--help]
+#	jpdf [-h] [--help]
 
 from pyPdf import PdfFileWriter, PdfFileReader
 from sys import argv
@@ -81,9 +81,9 @@ def main():
 	print "done!"
 
 def show_help():
-	print "USAGE: %s final.pdf file1 [file2 file3 ... fileN]" % argv[0]
-	print "       %s final.pdf file*" % argv[0]
-	print "       %s [-h] [--help]" % argv[0]	
+	print "USAGE: jpdf final.pdf file1 [file2 file3 ... fileN]"
+	print "       jpdf final.pdf file*"
+	print "       jpdf [-h] [--help]"
 
 if __name__ == "__main__":
 	if ((len(argv) == 2) and (argv[1] == "-h" or argv[1] == "--help")): show_help()
