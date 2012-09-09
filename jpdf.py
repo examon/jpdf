@@ -66,7 +66,7 @@ def main():
 			if (input_files[i].decrypt(pw) == 0):
 				print "error: sorry, wrong passowrd"
 				return
-			else: print "%s has been dencrypted, processing..." % argv[i+2]
+			else: print "%s has been decrypted, processing..." % argv[i+2]
 
 	# add all pages from input_files[] to output
 	output = PdfFileWriter()
